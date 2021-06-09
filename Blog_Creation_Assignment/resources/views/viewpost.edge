@@ -5,21 +5,21 @@
 @section('content')
 <div class="d-flex flex-row ml-auto" style="width:30%">
 <button class="btn btn-success m-2" onclick="editpost()" id="editpost" >Edit Post</button>
-<a href="/posts/{{post.id}}/changevisibilty/{{!post.isvisible}}">
+<a href="/post/{{post.id}}/changevisibilty/{{!post.isvisible}}">
 @if(post.isvisible)    
     <button class="btn btn-warning m-2">Hide Post</button>
 @else
 <button class="btn btn-warning m-2">Show Post</button>
 @endif
 </a>
-<form onsubmit="event.preventDefault(); delpost()" action="/posts/{{post.id}}?_method=DELETE" method="POST" >
+<form onsubmit="event.preventDefault(); delpost()" action="/post/{{post.id}}?_method=DELETE" method="POST" >
     {{ csrfField()}}
     <button id = "del"  type="submit" class="btn btn-danger m-2">Delete</button>
     </form>
     
 </div>
 
-<form action="/posts/{{post.id}}?_method=PUT" method="POST">
+<form action="/post/{{post.id}}?_method=PUT" method="POST">
     {{ csrfField() }}
     <table hidden id="table">
         <tr>

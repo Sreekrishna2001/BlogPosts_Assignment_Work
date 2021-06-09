@@ -22,12 +22,12 @@ Route.get("/hiddenposts", "PostController.hidposts"); // route for getting hidde
 Route.get("/post/new", "PostController.newpost"); //route for getting a page to create new blog posts
 Route.post("/post/new", "PostController.insertpost"); // route for creating or adding a post  Create New Post: `URI: post/new`
 
-Route.get("/posts/:id", "PostController.getpostbyid"); // route for viewing a  post Show Post: `URI: post/:id
+Route.get("/post/:id", "PostController.getpostbyid"); // route for viewing a  post Show Post: `URI: post/:id
 
-Route.put("/posts/:id", "PostController.updatepost"); // route for updating a post  URI: post/:id`
+Route.put("/post/:id", "PostController.updatepost"); // route for updating a post  URI: post/:id`
 
-Route.delete("/posts/:id", "PostController.delpost"); // route for deleting a post Delete Post: `URI: post/:id
+Route.delete("/post/:id", "PostController.delpost"); // route for deleting a post Delete Post: `URI: post/:id
 Route.get(
-  "/posts/:id/changevisibilty/:value",
+  "/post/:id/changevisibilty/:value",
   "PostController.changevisibility"
 ); // route for updating visibility of a post (hidden/visible flag)
