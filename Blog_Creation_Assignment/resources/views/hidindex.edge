@@ -1,0 +1,41 @@
+@layout('layouts.base')
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+@section('title')
+Hiddens Blogs
+@endsection
+
+@section('content')
+<div class="ml-auto m-2" style="width:10rem">
+<a href="/"><button class="btn btn-info">Show Visible Posts</button></a>
+</div>
+@if(posts!="")
+<div class="mx-auto" style="width:60%;">
+<div class="d-flex flex-column ">
+@each(post in posts)
+<div class="p-2">
+<h2>Title :{{post.Title}}</h2>
+<h4>{{post.Description}}</h4>
+
+
+<a href="posts/{{post.id}}" >
+
+  <button class="btn bg-info text-white">
+    
+    View Post</button></a>
+  </div>
+@endeach
+</div>
+</div>
+<script>
+  console.log("{{posts}}");
+  console.log("Helo");
+</script>
+@else
+<center>
+  <em><strong><h2>No Hidden Posts</h2></strong></em>
+</center>
+@endif
+
+
+@endsection
